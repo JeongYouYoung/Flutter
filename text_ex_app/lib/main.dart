@@ -40,6 +40,12 @@ class MyHomePage extends StatelessWidget {
                       //하나만 쓰면 child, 여러개 쓰면 children
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
+                       Divider(//선긋기
+              height: 20,
+              color: Colors.grey,
+              thickness: 1.5,
+            ),
+ 
             Text(
               "유비"
             ),
@@ -49,11 +55,22 @@ class MyHomePage extends StatelessWidget {
             Text(
               "장비"
             ),
-            SizedBox(
-              height: 50,
+            // SizedBox(
+            //   height: 50,
+            // ),
+            Divider(//선긋기
+              height: 20,
+              color: Colors.grey,
+              thickness: 1.5,
             ),
             Text(
-              "조조"
+              "조조",//TextStyle 모르면 TextStyle쳐서 확인해봐
+              style: TextStyle(
+                color: Colors.blue,//글자 색깔
+                fontSize: 28,//글자 사이즈
+                fontWeight: FontWeight.bold,//글자 굵기
+                letterSpacing: 5,//글자 간격
+              ),
             ),
             Text(
               "여포"
@@ -61,6 +78,12 @@ class MyHomePage extends StatelessWidget {
             Text(
               "동탁"
             ),
+                       Divider(//선긋기
+              height: 20,
+              color: Colors.grey,
+              thickness: 1.5,
+            )
+ 
          ]
         ),
       ),
