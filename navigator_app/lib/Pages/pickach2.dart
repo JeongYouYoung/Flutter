@@ -8,7 +8,9 @@ class pikachu2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pickachu1"),
+        title: const Text("Pickachu2"),
+        backgroundColor: Colors.orange,
+        foregroundColor: Colors.black,
       ),
       body: Center(
         child: Column(
@@ -25,7 +27,15 @@ class pikachu2 extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text("Go to the pickachu1 page"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.orange),
+              ),
+              child: const Text(
+                "Go to the pickachu1 page",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
             ),
           ],
         ),

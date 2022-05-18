@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:[
+          children: [
             const Center(
               child: Padding(
                 padding: EdgeInsets.all(0.0),
@@ -51,7 +51,7 @@ class Home extends StatelessWidget {
               endIndent: 15,
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 5),
               child: Text(
                 "성웅",
                 style: TextStyle(
@@ -61,7 +61,7 @@ class Home extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 5),
               child: Text(
                 "이순신 장군",
                 style: TextStyle(
@@ -71,7 +71,7 @@ class Home extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 5),
               child: Text(
                 "전적",
                 style: TextStyle(
@@ -80,8 +80,8 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-             const Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: Text(
                 "62전 62승",
                 style: TextStyle(
@@ -90,73 +90,66 @@ class Home extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Row(
-              children: [
-                Column(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+              child: Row(
+                children: [
+                  Column(
+                    children: const [
+                      Icon(Icons.check_circle_outline),
+                      Icon(Icons.check_circle_outline),
+                      Icon(Icons.check_circle_outline),
+                      Icon(Icons.check_circle_outline),
+                      Icon(Icons.check_circle_outline),
+                      Icon(Icons.check_circle_outline),
+                      Icon(Icons.check_circle_outline),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "옥포해전",
+                          style: TextStyle(fontSize: 19),
+                        ),
+                        Text(
+                          "사천포해전",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "당포해전",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "한산도대첩",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "부산포해전",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "명량해전",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "노량해전",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Icon(Icons.check_circle_rounded),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("옥포해전"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("사천포해전"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("당포해전"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("한산도대첩"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("부산포해전"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("명량해전"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text("노량해전"),
-                    ),
-                  ],
-                )
-              ],
+                  )
+                ],
+              ),
+            ),
+            Center(
+              child: Image.asset(
+                "images/turtle.gif",
+                width: 100,
+                height: 100,
+              ),
             ),
           ],
         ),

@@ -8,7 +8,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("First Page"),
+        title: const Text("Second Page"),
         backgroundColor: Colors.red,
         elevation: 0, //appbar와 단차? 0으로 만들기
       ),

@@ -10,7 +10,7 @@ class pikachu1 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Pickachu1"),
         backgroundColor: Colors.yellow,
-        
+        foregroundColor: Colors.black,
       ),
       body: Center(
         child: Column(
@@ -27,7 +27,15 @@ class pikachu1 extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text("Go to the pickachu1 page"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.yellow),
+              ),
+              child: const Text(
+                "Go to the pickachu1 page",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
             ),
           ],
         ),

@@ -49,7 +49,15 @@ class FirstPage extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text("Go to the pickachu1 page"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.yellow),
+              ),
+              child: const Text(
+                "Go to the pickachu1 page",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -62,7 +70,15 @@ class FirstPage extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text("Go to the pickachu2 page"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.orange),
+              ),
+              child: const Text(
+                "Go to the pickachu2 page",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
             ),
           ],
         ),
