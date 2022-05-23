@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     lampColor = false;
     lampW = 150;
     lampH = 300;
-    lampZoomText = "확대";
+    lampZoomText = "전구 확대";
     super.initState();
   }
 
@@ -115,10 +115,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Switch(
                   value: lampOnOff,
                   onChanged: (value) {
-                    setState(() {
-                      lampOnOff = value;
-                      decisionOnOff();
-                    });
+                    setState(
+                      () {
+                        lampOnOff = value;
+                        decisionOnOff();
+                      },
+                    );
                   },
                 )
               ],
@@ -150,11 +152,11 @@ class _MyHomePageState extends State<MyHomePage> {
     if (lampZoom == true) {
       lampW = 300;
       lampH = 600;
-      lampZoomText = "축소";
+      lampZoomText = "전구 축소";
     } else {
       lampW = 150;
       lampH = 300;
-      lampZoomText = "확대";
+      lampZoomText = "전구 확대";
     }
   }
 
