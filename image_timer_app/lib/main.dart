@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
 
     //Timer 설치-----------
     //initState에서  Timer치고 엔터
-    Timer.periodic(const Duration(seconds: 3), (Timer timer) {
+    Timer.periodic(const Duration(seconds:1), (Timer timer) {
       changImage();
      });
   }

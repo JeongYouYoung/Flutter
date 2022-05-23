@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //Property
+  //Property : 전역변수 -> 화면에 바뀌는건 다 여기 들가야함.
   //이미지 이름
   late String _lampImage; //Image Name
   late double _lampWidth; //Image Width
@@ -57,38 +57,36 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //Container(//컨테이너는 유일하게 색을 줄수 있다. 
-            SizedBox( 
-             // color: Colors.blueGrey,
+            //Container(//컨테이너는 유일하게 색을 줄수 있다.
+            SizedBox(
+              // color: Colors.blueGrey,
               width: 350,
               height: 650,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                _lampImage,
-                width: _lampWidth,
-                height: _lampHeigth,
-              )
+                    _lampImage,
+                    width: _lampWidth,
+                    height: _lampHeigth,
+                  )
                 ],
-              )
-               ,
-              //위,아래 넓이를 줄수 있어서 SizedBox사용 하지만 child 로 사이즈를 주면 
+              ),
+              //위,아래 넓이를 줄수 있어서 SizedBox사용 하지만 child 로 사이즈를 주면
               //child는 모든 권한을 다 가지고있어서  children 으로 옮겨줘야함.
-              
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                    onPressed: () {
-                      setState(() {
-                         //이미지 확대축소 함수
+                  onPressed: () {
+                    setState(() {
+                      //이미지 확대축소 함수
                       decisionLampSize();
-                      });
-                     
-                    },
-                    child: Text(_buttonName)),
+                    });
+                  },
+                  child: Text(_buttonName),
+                ),
                 const SizedBox(
                   width: 20,
                 ),
@@ -96,15 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     const Text('전구 스위치'),
                     Switch(
-                      value: _switch, 
+                      value: _switch,
                       onChanged: (value) {
                         setState(() {
-                           //전구 껏다켰다 하는 함수
-                      _switch = value;
-                      decisionOnOff();
+                          //전구 껏다켰다 하는 함수
+                          _switch = value;
+                          decisionOnOff();
                         });
-                     
-                    }),
+                      },
+                    ),
                   ],
                 )
               ],
@@ -115,34 +113,27 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 // Function---------------------------------------
- 
- decisionLampSize(){
-   if(_lampSizeStatus == 'small'){
-     _lampWidth = 300;
-    _lampHeigth = 600;
-     _buttonName = "Image 축소";
-     _lampSizeStatus = "large";
-   }else{
-     _lampWidth = 150;
-     _lampHeigth = 300;
-     _buttonName = "Image 확대";
-     _lampSizeStatus = "small";
-   }
 
+  decisionLampSize() {
+    if (_lampSizeStatus == 'small') {
+      _lampWidth = 300;
+      _lampHeigth = 600;
+      _buttonName = "Image 축소";
+      _lampSizeStatus = "large";
+    } else {
+      _lampWidth = 150;
+      _lampHeigth = 300;
+      _buttonName = "Image 확대";
+      _lampSizeStatus = "small";
+    }
+  }
 
-
- }
- 
- decisionOnOff(){
-   //value는 위에함수안에서만 아니까 전역변수인 _switch를 만들어준거임.
-   if(_switch){
-     _lampImage = "images/lamp_on.png";
-   }else{
+  decisionOnOff() {
+    //value는 위에함수안에서만 아니까 전역변수인 _switch를 만들어준거임.
+    if (_switch) {
+      _lampImage = "images/lamp_on.png";
+    } else {
       _lampImage = "images/lamp_off.png";
-   }
-
-}
-
-
-
-}//end
+    }
+  }
+} //end
