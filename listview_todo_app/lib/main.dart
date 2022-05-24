@@ -1,7 +1,7 @@
 //Route로만  사용
 import 'package:flutter/material.dart';
-import 'package:listview_todo_app/insert_list.dart';
-import 'package:listview_todo_app/table_list.dart';
+import 'package:listview_todo_app/view/insert_list.dart';
+import 'package:listview_todo_app/view/table_list.dart';
 
 void main() {
   runApp(const MyApp());

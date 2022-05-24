@@ -1,5 +1,6 @@
 
 import 'package:bmi_calc_3team_app/bmi_check_page.dart';
+import 'package:bmi_calc_3team_app/bmi_cilck_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class YyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/':(context) => const Bmi_check_page(),
+        '/':(context) => const Bmi_click_page(),
         '/bc' :(context) => const Bmi_check_page(),
       },
       initialRoute: '/',

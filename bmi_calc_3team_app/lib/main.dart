@@ -1,8 +1,8 @@
+import 'package:bmi_calc_3team_app/gs_main.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calc_3team_app/sw_page.dart';
 import 'package:bmi_calc_3team_app/sm_page.dart';
 import 'package:bmi_calc_3team_app/yy_page.dart';
-import 'package:bmi_calc_3team_app/gs_page.dart';
 import 'package:bmi_calc_3team_app/gh_page.dart';
 import 'package:bmi_calc_3team_app/yj_page.dart';
 
