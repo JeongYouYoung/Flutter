@@ -12,6 +12,7 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
 //Property
+  List<Flag> flagList = [];
   final quizController = TextEditingController();
   final flagNameController = TextEditingController();
   var _imagePath;
@@ -140,37 +141,51 @@ class _SecondPageState extends State<SecondPage> {
           ),
           Text(imageName),
           ElevatedButton(
-            onPressed: (){
-              if(quizController.text.trim().isEmpty && flagNameController.text.trim().isEmpty){
-                addList();
-                
-              }else{
-                Navigator.pop(context);
-              }
-            }, 
-          child: const Text("문제 추가하기"))
+              onPressed: () {
+                if (quizController.text.trim().isEmpty &&
+                    flagNameController.text.trim().isEmpty) {
+                  alertAdd(context);
+                } else {}
+              },
+              child: const Text("문제 추가하기"))
         ],
       ),
     );
   }
 
-addList(){
-Message.imageFlag = imageName;
-Message.quizName = quizController.text;
-Message.flagName = flagNameController.text;
-}
+  
+  alertAdd(BuildContext context) {
+    showDialog(
+      context: context, 
+      builder: (BuildContext context){
+        return AlertDialog(
+      title: Text("문제 추가하기"),
+      content: Text("이국가의 문제는 ${quizController.text}입니다."
+          "또 이 문제의 정답은 ${flagNameController.text}입니다."
+          "이 문제를 추가하시겠습니까?"),
+      actions: [
+        TextButton(
+            onPressed: () {
+              addFlag();
+              Navigator.of(context).pop();
+            },
+            child: const Text("예")),
+        TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("아니오"))
+      ],
+    );
+      }
+      );
+  }
 
-alertAdd(BuildContext context, position){
-showDialog(context: context, 
-builder: (BuildContext ctx){
-  return AlertDialog(
-    title: Text("문제 추가하기"),
-    content: Text(
-      "이 국기에 문제는 ${widget.list[position].quizName} 입니다."
-      "또 이 문제의 정답은 ${widget.list[position].flagName}"
-    ),
-  );
-});
-
-}
+  addFlag() {
+    // list를 불러오긴했지만 다른 클래스이므로 widget.을 붙여서 클래스를 불러와줘야함.
+    widget.list.add(Flag(
+        imageFlag: imageName,
+        flagName: flagNameController.text,
+        quizName: quizController.text));
+  }
 }//end
