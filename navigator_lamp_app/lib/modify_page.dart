@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:navigator_lamp_app/message.dart';
 
 class ModifyPage extends StatefulWidget {
@@ -11,7 +10,7 @@ class ModifyPage extends StatefulWidget {
 }
 
 class _ModifyPageState extends State<ModifyPage> {
-late TextEditingController textEditingController2;
+late TextEditingController text2;
   late bool switchValue;
   late String onoff;
 
@@ -19,15 +18,17 @@ late TextEditingController textEditingController2;
   void initState() {
     // TODO: implement initState
     super.initState();
-    if (Message.lamp == true) {
-      switchValue = true;
-      onoff = "On";
-    } else {
-      switchValue = false;
-      onoff = "Off";
+    
+   
+    text2 = TextEditingController();
+    text2.text = Message.text;
+    if(Message.lamp){
+      onoff = "on";
+      switchValue = true; 
+    }else{
+      onoff = "off";
+      switchValue = false; 
     }
-
-     textEditingController2 = TextEditingController();
   }
 
   @override
@@ -43,7 +44,8 @@ late TextEditingController textEditingController2;
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
-                controller: textEditingController2,
+                controller: text2,
+                keyboardType: TextInputType.text,
               ),
             ),
             Padding(
@@ -53,18 +55,17 @@ late TextEditingController textEditingController2;
                 children: [
                   Text(onoff),
                   Switch(
-                      value: Message.lamp,
+                      value: switchValue,
                       onChanged: (value) {
-                        //
+                        switchValue = value;
                         setState(() {
-                          Message.lamp = switchValue;
-                          switchValue = value;
-                          if (value == true) {
-                            Message.lamp = true;
-                          } else {
-                            Message.lamp = false;
+                         if(value){
+                           onoff = "on";
+                         }else{
+                           onoff = "off";
+                         }
                           }
-                        });
+                        );
                       }),
                 ],
               ),
@@ -73,11 +74,11 @@ late TextEditingController textEditingController2;
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
                   onPressed: () {
-                    //
-                    setState(() {});
+                    
+                    setState(() {
                     Message.lamp = switchValue;
-                    Message.text= textEditingController2.text;
-                    Navigator.pop(context);
+                    });
+                    
                   },
                   child: const Text("입력")),
             )
@@ -86,4 +87,5 @@ late TextEditingController textEditingController2;
       ),
     );
   }
+
 }

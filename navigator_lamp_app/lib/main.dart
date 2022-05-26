@@ -50,16 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               //일단은 그냥 있는 버튼
             },
-            icon: Icon(Icons.home)),
+            icon: const Icon(Icons.home)),
         actions: [
           IconButton(
               onPressed: () {
                 Message.text = textEditingController.text;
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ModifyPage();
-                })).then((value) => getData());
+                Navigator.push(
+                  context, MaterialPageRoute(builder: ((context){
+                    return ModifyPage();
+                  }))).then((value) => getData());
               },
-              icon: Icon(Icons.edit))
+              icon: const Icon(Icons.edit))
         ],
       ),
       body: Center(
@@ -91,11 +92,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   getData() {
+    textEditingController.text = Message.text;
     setState(() {
-      Message.text = textEditingController.text;
-      if (Message.lamp == true) {
-        lampImage = "images/lamp_on.png";
-      } else {
+      if(Message.lamp == true){
+        lampImage = "images/lame_on.png";
+      }else{
         lampImage = "images/lamp_off.png";
       }
     });
