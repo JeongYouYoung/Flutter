@@ -35,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     textEditingController = TextEditingController();
     lampImage = "images/lamp_on.png";
@@ -46,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Main 화면"),
+        backgroundColor: Color.fromARGB(255, 000 , 153, 102),
         leading: IconButton(
             onPressed: () {
               //일단은 그냥 있는 버튼
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Message.text = textEditingController.text;
                 Navigator.push(
                   context, MaterialPageRoute(builder: ((context){
-                    return ModifyPage();
+                    return const ModifyPage();
                   }))).then((value) => getData());
               },
               icon: const Icon(Icons.edit))
@@ -94,8 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
   getData() {
     textEditingController.text = Message.text;
     setState(() {
+      textEditingController.text = Message.text;
       if(Message.lamp == true){
-        lampImage = "images/lame_on.png";
+        lampImage = "images/lamp_on.png";
       }else{
         lampImage = "images/lamp_off.png";
       }

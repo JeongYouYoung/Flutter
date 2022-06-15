@@ -77,7 +77,9 @@ late TextEditingController text2;
                     
                     setState(() {
                     Message.lamp = switchValue;
+                    Message.text = text2.text;
                     });
+                    Navigator.pop(context);
                     
                   },
                   child: const Text("입력")),
